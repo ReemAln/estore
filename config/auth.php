@@ -40,8 +40,16 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        // Added for API Auth
+        'api' => [
+            'driver' => 'passport',
+            'provider' => 'users',
+        ],
     ],
 
+    
+
+    
     /*
     |--------------------------------------------------------------------------
     | User Providers
