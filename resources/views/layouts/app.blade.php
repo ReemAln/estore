@@ -8,17 +8,17 @@
  </head>
 
  <body>
+<div class="container-xxl bg-white p-0">
+  @include('layouts.partials.nav')
 
-@include('layouts.partials.nav')
+  @include('layouts.partials.header')
 
-@include('layouts.partials.header')
-
-@yield('content')
+  @yield('content')
 
 @include('layouts.partials.footer')
 
-@include('layouts.partials.footer-scripts')
-
+  @include('layouts.partials.footer-scripts')
+</div>
  </body>
 
 </html>
