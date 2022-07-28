@@ -18,22 +18,17 @@
                 <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
                 <a href="service.html" class="nav-item nav-link">Service</a>
                 <a href="{{ route('products.index') }}" class="nav-item nav-link">Products</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
-                    </div>
-                </div>
                
-                
-
                 @auth
-                <a href="{{ route('logout') }}" class="nav-item nav-link">logout </a>
-               @else
-                   <a href="{{ route('login') }}" class="nav-item nav-link">Log in</a>
-
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ Auth::user()->name }}</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="{{ route('logout') }}" class="dropdown-item">logout</a>
+                            <a href="404.html" class="dropdown-item">404 Page</a>
+                        </div>
+                    </div>
+                @else
+                  <a href="{{ route('login') }}" class="nav-item nav-link">Log in</a>
                    @if (Route::has('register'))
                        <a href="{{ route('register') }}" class="nav-item nav-link">Register</a>
                    @endif
