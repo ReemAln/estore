@@ -9,16 +9,16 @@
 
  <body>
 <div class="container-xxl bg-white p-0">
-  @include('layouts.partials.nav')
-
   @include('layouts.partials.header')
-
-  @yield('content')
+  @include('layouts.partials.nav')
+ @yield('content')
 
 @include('layouts.partials.footer')
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+</div>  
+@include('layouts.partials.footer-scripts')
+ 
 
-  @include('layouts.partials.footer-scripts')
-</div>
  </body>
 
 </html>

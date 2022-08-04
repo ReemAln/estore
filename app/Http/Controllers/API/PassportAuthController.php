@@ -37,6 +37,7 @@ class PassportAuthController extends Controller
      */
     public function login(Request $request)
     {
+        
         $data = [
             'email' => $request->email,
             'password' => $request->password

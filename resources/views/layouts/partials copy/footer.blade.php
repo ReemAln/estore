@@ -1,5 +1,9 @@
 
+<div class="container bg-primary">
+   
         <!-- Footer Start -->
+
+       
         <div class="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5 px-lg-5">
                 <div class="row g-5">
@@ -78,5 +82,22 @@
                     </div>
                 </div>
             </div>
-        </div>
+            <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+        </div> 
+
+
         <!-- Footer End -->
+
+</div>
+  
+
+
+
+
+
+
+
+      
+<!-- Back to Top -->
+
+

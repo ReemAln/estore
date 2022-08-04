@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ItemController;
-use App\Http\Controllers\ProductController;
+//use App\Http\Controllers\ProductController ;// as FrontendProductController;
 use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
+use App\Http\Controllers\Backend\ProductController ;//as BackendProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,17 +20,35 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('home');
 });
-// Route::get('/home', function () {
-//     return view('backend.layouts.app');
-// });
+
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
 Auth::routes();
+
+//Route::resource('products',App\Http\Controllers\ProductController::class);
+Route::resource('products',App\Http\Controllers\Backend\ProductController::class);
+
+Route::get('/home',[HomeController::class,'index'])->name('home');
+
+Route::get('/allProducts',[App\Http\Controllers\Backend\ProductController::class,'allProducts'])->name('allProducts');
+
+Route::get('/dashboard',[HomeController::class,'index'])->name('dashboard');
+
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::resource('users',UserController::class);
+
+Route::get('/datatables',function(){
+return view('backend.datatables');
+});
+
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/home1', function () {
@@ -41,16 +61,8 @@ Auth::routes();
 
 //Route::resource('products', [AdminProductController::class]);
 
-Route::resource('products',App\Http\Controllers\ProductController::class);
 
-Route::get('/home',[HomeController::class,'index'])->name('home');
-
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
-Route::get('/datatables',function(){
-return view('backend.datatables');
-});
-
+//Route::get('/allusers',[UserController::class,'getAllUsers']);
 
 
 
